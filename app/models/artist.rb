@@ -32,6 +32,10 @@ class Artist < ActiveRecord::Base
     max_artists.collect {|el| el.name} # -> puts names of those artists
   end
 
-  
+  #returns names of artists belonging to the given culture
+  def self.search_by_culture(arg)
+    x = Artist.all.select {|artist| artist.culture == arg}
+    x.collect {|el| el.name}
+  end
 
 end
