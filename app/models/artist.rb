@@ -34,7 +34,7 @@ class Artist < ActiveRecord::Base
 
   #returns names of artists belonging to the given culture
   def self.search_by_culture(arg)
-    x = Artist.all.select {|artist| artist.culture == arg}
+    x = Artist.all.select {|artist| artist.culture.downcase == arg.downcase}
     x.collect {|el| el.name}
   end
 
