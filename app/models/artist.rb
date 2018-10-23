@@ -26,12 +26,12 @@ class Artist < ActiveRecord::Base
 
   #returns name(s) of artist(s) with the most artworks
   def self.most_represented
-    work = Artist.all.collect {|el| el.art_pieces} # -> array of arrays of artwork instances (each array element contains artworks of one artist)
-    max = work.max_by {|arr| arr.count} # -> arr with artwork instance
-    artist = max[0].artist # -> artist instance with the biggest numbers of works
-    count = artist.art_pieces.length # -> count = the max number of artworks per artist
-    max_artists = Artist.all.select {|artist| artist.art_pieces.length == count} # -> instances of artists with the same number of artworks
-    max_artists.collect {|el| el.name} # -> puts names of those artists
+    work = Artist.all.collect {|el| el.art_pieces}
+    max = work.max_by {|arr| arr.count}
+    artist = max[0].artist
+    count = artist.art_pieces.length
+    max_artists = Artist.all.select {|artist| artist.art_pieces.length == count}
+    max_artists.collect {|el| el.name} 
   end
 
   #returns names of artists belonging to the given culture
