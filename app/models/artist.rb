@@ -1,3 +1,5 @@
+require 'pry'
+
 class Artist < ActiveRecord::Base
   has_many :art_pieces
   has_many :galleries, through: :art_pieces
@@ -31,7 +33,5 @@ class Artist < ActiveRecord::Base
     max_artists = Artist.all.select {|artist| artist.art_pieces.length == count} # -> instances of artists with the same number of artworks
     max_artists.collect {|el| el.name} # -> puts names of those artists
   end
-
-  
 
 end
