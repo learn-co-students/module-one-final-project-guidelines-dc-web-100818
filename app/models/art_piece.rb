@@ -9,4 +9,9 @@ class ArtPiece < ActiveRecord::Base
     piece_list.collect {|piece| piece.name}
   end
 
+  def self.search_by_class_culture(class_input, culture_input)
+    piece_list = self.all.select {|piece| piece.classification.downcase == class_input.downcase && piece.artist.culture.downcase == culture_input.downcase}
+    piece_list.collect {|piece| piece.name}
+  end
+
 end
