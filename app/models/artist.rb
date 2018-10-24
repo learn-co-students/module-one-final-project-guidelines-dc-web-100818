@@ -31,7 +31,7 @@ class Artist < ActiveRecord::Base
     artist = max[0].artist
     count = artist.art_pieces.length
     max_artists = Artist.all.select {|artist| artist.art_pieces.length == count}
-    max_artists.collect {|el| el.name} 
+    max_artists.collect {|el| el.name}
   end
 
   #returns names of artists belonging to the given culture
