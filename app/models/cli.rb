@@ -23,8 +23,8 @@
 
   def menu
     puts "What are you looking for?"
-    puts "1. Find by Artist"
-    puts "2. Find by Artwork"
+    puts "1. Find Artist"
+    puts "2. Find Artwork"
     puts "3. Gallery information"
     puts "4. exit"
     puts "Please enter a number:"
@@ -46,10 +46,27 @@
   end
 
 def artist_prompts
-  
+  puts "What artist are you looking for?"
+  Artist.list_artists
+  input = (gets.chomp).to_i
+
+  if input > Artist.list_artists.length || input == 0
+    puts "Please select a valid number"
+  else
+
+  end
+end
+
+
+
+  Artist.all[input.to_i-1]
+
+
+
 end
 
 def artwork_prompts
+
 end
 
 def gallery_prompts
