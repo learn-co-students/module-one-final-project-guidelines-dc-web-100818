@@ -5,19 +5,18 @@ class Artist < ActiveRecord::Base
   has_many :galleries, through: :art_pieces
   has_many :periods, through: :art_pieces
 
+<<<<<<< HEAD
   # lists all artists names
-  def self.list_artists
-    x = 0
-    self.all.collect {|i| puts "#{x += 1}. #{i.name}"}
+=======
+  #lists the names of all pieces of art for an artist
+  def works
+    self.art_pieces.map { |piece| piece.name }
   end
 
-  #lists info about a specific artist
-  def info
-    works = self.art_pieces.map { |piece| "#{piece.name}"}.join(", ")
-    puts "Name: #{self.name}"
-    puts "Culture: #{self.culture}"
-    puts "Life span: #{self.life_span}"
-    puts "Works: #{works}"
+>>>>>>> f170f6c4216aef7c317b532a2c7460966a3dd0bd
+  def self.list_artists
+    x = 0
+    self.all.collect {|i| "#{x += 1}. #{i.name}"}
   end
 
   #lists all pieces of art and the corresponding gallery

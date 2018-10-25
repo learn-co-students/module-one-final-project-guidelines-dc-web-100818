@@ -45,23 +45,23 @@
     end
   end
 
+
 def artist_prompts
   puts "What artist are you looking for?"
-  Artist.list_artists
+  puts Artist.list_artists
   input = (gets.chomp).to_i
 
   if input > Artist.list_artists.length || input == 0
     puts "Please select a valid number"
+
   else
 
   end
 end
 
-# Artist.all[input.to_i-1]
-#
-# def artwork_prompts
-#
-# end
-#
-# def gallery_prompts
-# end
+def artwork_prompts
+
+end
+
+def gallery_prompts
+end
