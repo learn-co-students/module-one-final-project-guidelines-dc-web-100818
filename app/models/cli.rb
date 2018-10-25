@@ -26,7 +26,7 @@
     puts "1. Find Artist"
     puts "2. Find Artwork"
     puts "3. Gallery information"
-    puts "4. exit"
+    puts "4. Exit"
     puts "Please enter a number:"
 
     input = gets.chomp
@@ -55,12 +55,44 @@ def artist_prompts
     puts "Please select a valid number"
 
   else
-
+    object = Artist.all[input-1]
+    object.info
+    puts "Would you like to look for something else? Enter 'yes' or 'no'"
+    input = gets.chomp
+    while input != "yes" && input != "no"
+      puts "Please enter 'yes' or 'no'"
+      input = gets.chomp
+    end
+      case(input)
+      when "yes"
+          menu
+      when "no"
+          exit_method
+      end
   end
 end
 
 def artwork_prompts
+ puts "Would you like to search for a art pieces by name, type, or culture?"
+ puts "1. Name"
+ puts "2. Type"
+ puts "3. Culture"
+ puts "4. Exit"
 
+ input = gets.chomp
+
+  case(input)
+    when '1'
+      artwork_name
+    when '2'
+      artwork_type
+    when '3'
+      artwork_culture
+    when '4'
+      exit_method
+    else
+      puts "Please enter a valid number"
+  end
 end
 
 def gallery_prompts
