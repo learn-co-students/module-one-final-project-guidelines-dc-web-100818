@@ -52,6 +52,7 @@
   end
 
 def continue
+  puts "======================================================================="
   puts "Would you like to look for something else? Enter 'yes' or 'no'"
   input = gets.chomp
   while input != "yes" && input != "no"
@@ -117,10 +118,21 @@ def art_piece_list
 end
 
 def artwork_type
+ puts "Please enter one of the following:"
+ arr = ArtPiece.all.collect {|e| e.classification}.uniq
+ arr.each {|el| puts "* #{el}"}
+ input = gets.chomp
+ puts ArtPiece.search_by_classification(input)
+ continue
+end
+
+def artwork_culture
   puts "Please enter one of the following:"
-  arr = ArtPiece.all.collect {|e| e.classification}.uniq
+  arr = Artist.all.collect {|el| el.culture}.uniq.sort
   arr.each {|el| puts "* #{el}"}
   input = gets.chomp
+  puts ArtPiece.search_by_culture(input)
+  continue
 end
 
 def gallery_prompts
