@@ -30,6 +30,10 @@
     puts "Please enter a number:"
 
     input = gets.chomp
+    while ![1, 2, 3, 4].include?(input.to_i)
+      puts "Please enter a valid number"
+      input = gets.chomp
+    end
 
     case(input)
       when '1'
@@ -40,36 +44,37 @@
         gallery_prompts
       when '4'
         exit_method
-    else
-      puts "Please enter a valid number"
     end
   end
 
-
-def artist_prompts
-  puts "What artist are you looking for?"
-  puts Artist.list_artists
-  input = (gets.chomp).to_i
-
-  if input > Artist.list_artists.length || input == 0
-    puts "Please select a valid number"
-
-  else
-    object = Artist.all[input-1]
-    object.info
-    puts "Would you like to look for something else? Enter 'yes' or 'no'"
+def continue
+  puts "Would you like to look for something else? Enter 'yes' or 'no'"
+  input = gets.chomp
+  while input != "yes" && input != "no"
+    puts "Please enter 'yes' or 'no'"
     input = gets.chomp
-    while input != "yes" && input != "no"
-      puts "Please enter 'yes' or 'no'"
-      input = gets.chomp
-    end
-      case(input)
+  end
+    case(input)
       when "yes"
           menu
       when "no"
           exit_method
-      end
+    end
+end
+
+
+def artist_prompts
+  puts "What artist are you looking for? Please enter a number."
+  puts Artist.list_artists
+  input = (gets.chomp).to_i
+
+  while  input > Artist.list_artists.length || input == 0
+    puts "Please select a valid number"
+    input = (gets.chomp).to_i
   end
+  object = Artist.all[input-1]
+  object.info
+  continue
 end
 
 def artwork_prompts
