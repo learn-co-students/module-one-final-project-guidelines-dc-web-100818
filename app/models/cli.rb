@@ -57,17 +57,11 @@ def artist_prompts
   end
 end
 
-
-
-  Artist.all[input.to_i-1]
-
-
-
-end
-
-def artwork_prompts
-
-end
-
-def gallery_prompts
-end
+# Artist.all[input.to_i-1]
+#
+# def artwork_prompts
+#
+# end
+#
+# def gallery_prompts
+# end
