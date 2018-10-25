@@ -1,8 +1,6 @@
 
-class CLI
-
   def start
-    puts "==========  Welcome to the Flatiron Museum of Art! //  =========="
+    puts "==========  Welcome to the Flatiron Museum of Art!  =========="
     puts "Enter 'menu' to access the menu."
     puts "Enter 'q' to exit."
     input = gets.chomp
@@ -16,8 +14,6 @@ class CLI
   end
 
   def menu
-    puts " "
+    puts ""
 
   end
-
-end
