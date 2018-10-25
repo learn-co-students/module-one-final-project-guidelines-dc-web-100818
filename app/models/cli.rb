@@ -117,12 +117,9 @@ end
 
 def artwork_type
   puts "Please enter one of the following:"
-  ArtPiece.all.collect {|e| e.classification}.uniq.join(", ")
-  
+  arr = ArtPiece.all.collect {|e| e.classification}.uniq
+  arr.each {|el| puts "* #{el}"}
   input = gets.chomp
-
-
-
 end
 
 def gallery_prompts
