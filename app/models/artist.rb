@@ -15,7 +15,7 @@ class Artist < ActiveRecord::Base
 
   #lists info about a specific artist
   def info
-    works = self.art_pieces.map { |piece| "#{piece.name}"}
+    works = self.art_pieces.map { |piece| "#{piece.name}"}.join(", ")
     puts "Name: #{self.name}"
     puts "Culture: #{self.culture}"
     puts "Life span: #{self.life_span}"
