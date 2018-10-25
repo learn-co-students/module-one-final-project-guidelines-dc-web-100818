@@ -5,6 +5,10 @@
     puts "Enter 'q' to exit."
 
     input = gets.chomp
+    while input != "menu" && input != "q"
+      puts "Please enter 'menu' or 'q'"
+      input = gets.chomp
+    end
 
     case(input)
       when 'menu'
@@ -62,6 +66,14 @@ def continue
     end
 end
 
+def select_four
+  input = gets.chomp
+  while ![1, 2, 3, 4].include?(input.to_i)
+    puts "Please enter a valid number"
+    input = gets.chomp
+  end
+end
+
 
 def artist_prompts
   puts "What artist are you looking for? Please enter a number."
@@ -78,25 +90,23 @@ def artist_prompts
 end
 
 def artwork_prompts
- puts "Would you like to search for a art pieces by name, type, or culture?"
- puts "1. Name"
+ puts "Would you like to search for a art pieces by type, or culture? Please enter a number."
+ puts "1. List all Art Pieces"
  puts "2. Type"
  puts "3. Culture"
  puts "4. Exit"
 
- input = gets.chomp
+ select_four
 
   case(input)
     when '1'
-      artwork_name
+      lists_all_art
     when '2'
       artwork_type
     when '3'
       artwork_culture
     when '4'
       exit_method
-    else
-      puts "Please enter a valid number"
   end
 end
 
