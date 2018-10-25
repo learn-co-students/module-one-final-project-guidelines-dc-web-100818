@@ -136,4 +136,27 @@ def artwork_culture
 end
 
 def gallery_prompts
+  puts "Please select a floor. Enter 1, 2, or 3."
+  input1 = gets.chomp
+  puts " Are you looking for information about? Please enter a number."
+  puts "1. Galleries"
+  puts "2. Artwork"
+  puts "3. Artists"
+  puts "4. Exit"
+
+  input2 = gets.chomp
+
+  case(input2)
+    when '1'
+      puts Gallery.search_galleries_by_floor(input1.to_i)
+      continue
+    when '2'
+      puts Gallery.search_artwork_by_floor(input1.to_i)
+      continue
+    when '3'
+      puts Gallery.search_artists_by_floor(input1.to_i)
+      continue
+    when '4'
+      exit_method
+  end
 end
