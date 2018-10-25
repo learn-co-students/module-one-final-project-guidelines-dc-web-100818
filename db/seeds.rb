@@ -21,12 +21,12 @@ vermeer = Artist.create(name: "Johannes Vermeer", culture: "Dutch", life_span: "
 basquiat = Artist.create(name: "Jean-Michel Basquiat", culture: "American", life_span: "1960 - 1988")
 bernini = Artist.create(name: "Gian Lorenzo Bernini", culture: "Italian", life_span: "1598 - 1680")
 warhol = Artist.create(name: "Andy Warhol", culture: "American", life_span: "1928 - 1987")
-moore = Artist.create(name: "Henry Moore" culture: "British" life_span: "1898 - 1986")
-monet = Artist.create(name: "Claude Monet" culture: "French" life_span: "1840 - 1926")
-renoir = Artist.create(name: "Pierre-Auguste Renoir" culture: "French" life_span: "1841 - 1919")
-degas = Artist.create(name: "Edgar Degas" culture: "French" life_span: "1834 - 1917")
-klee = Artist.create(name: "Paul Klee" culture: "Swiss" life_span: "1879 - 1940")
-abramovic = Artist.create(name: "Marina Abramovic" culture: "Serbian" life_span: "born 1946")
+moore = Artist.create(name: "Henry Moore", culture: "British", life_span: "1898 - 1986")
+monet = Artist.create(name: "Claude Monet", culture: "French", life_span: "1840 - 1926")
+renoir = Artist.create(name: "Pierre-Auguste Renoir", culture: "French", life_span: "1841 - 1919")
+degas = Artist.create(name: "Edgar Degas", culture: "French", life_span: "1834 - 1917")
+klee = Artist.create(name: "Paul Klee", culture: "Swiss", life_span: "1879 - 1940")
+abramovic = Artist.create(name: "Marina Abramovic", culture: "Serbian", life_span: "born 1946")
 
 # Period, total: 10
 surrealism = Period.create(name: "Surrealism")
@@ -34,10 +34,10 @@ cubism = Period.create(name: "Cubism")
 dga = Period.create(name: "Dutch Golden Age")
 contemporary = Period.create(name: "Contemporary Art")
 expressionism = Period.create(name: "Expressionism")
-renaissance = Period.create (name: "Renaissance")
+renaissance = Period.create(name: "Renaissance")
 neoexpress = Period.new(name: "Neo-expressionism")
-baroque = Period.create (name: "Baroque")
-pop = Period.create (name: "Pop art")
+baroque = Period.create(name: "Baroque")
+pop = Period.create(name: "Pop art")
 impressionism = Period.create(name: "Impressionism")
 
 
@@ -49,10 +49,10 @@ gal4 = Gallery.create(name: "Renaissance", floor: 2, theme: "Masters of Italian 
 gal5 = Gallery.create(name: "Expressionism", floor: 3, theme: "European Expressionism")
 gal6 = Gallery.create(name: "Scultures from Europe", floor:1, theme: "European sculptures of the ages")
 gal7 = Gallery.create(name: "Modern Art", floor: 3, theme: "Modern Art")
-gal8 = Gallery.create(name: "French Impressionism", floor: 3, theme: "")
+gal8 = Gallery.create(name: "French Impressionism", floor: 3, theme: "Masters of French Impressionism")
 
 
-# Artwork, total: 30
+# Artwork, total: 28
 night_watch = ArtPiece.create(name: "The Night Watch", classification: "Oil on canvas", period_id: dga.id, artist_id: rembrandt.id, gallery_id: gal1.id)
 ww = ArtPiece.create(name: "The Weeping Woman", classification: "Oil on canvas", period_id: cubism.id, artist_id: picasso.id, gallery_id: gal2.id)
 memory = ArtPiece.create(name: "The Persistence of Memory", classification: "Oil on canvas", period_id: surrealism.id, artist_id: dali.id, gallery_id: gal2.id)
