@@ -5,8 +5,6 @@ class Artist < ActiveRecord::Base
   has_many :galleries, through: :art_pieces
   has_many :periods, through: :art_pieces
 
-  #lists the names of all pieces of art for an artist
-
   # lists all artists names
   def self.list_artists
     x = 0
