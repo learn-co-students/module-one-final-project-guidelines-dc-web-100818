@@ -100,7 +100,7 @@ def artwork_prompts
 
   case(input)
     when '1'
-      lists_all_art
+      art_piece_list
     when '2'
       artwork_type
     when '3'
@@ -108,6 +108,21 @@ def artwork_prompts
     when '4'
       exit_method
   end
+end
+
+def art_piece_list
+  ArtPiece.list_all
+  continue
+end
+
+def artwork_type
+  puts "Please enter one of the following:"
+  ArtPiece.all.collect {|e| e.classification}.uniq.join(", ")
+  
+  input = gets.chomp
+
+
+
 end
 
 def gallery_prompts
