@@ -3,6 +3,12 @@ class ArtPiece < ActiveRecord::Base
   belongs_to :gallery
   belongs_to :period
 
+  #lists all artwork names
+  def self.list_all
+    x = 0
+    self.all.collect{|i| "#{x += 1}. #{i.name} by #{i.artist.name}"}
+  end
+
   # returns names of artworks with the input classification
   def self.search_by_classification(input)
     piece_list = self.all.select {|piece| piece.classification.downcase == input.downcase}
