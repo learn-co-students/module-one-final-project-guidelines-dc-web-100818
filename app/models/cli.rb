@@ -66,8 +66,7 @@ def continue
     end
 end
 
-def select_four
-  input = gets.chomp
+def select_four(input)
   while ![1, 2, 3, 4].include?(input.to_i)
     puts "Please enter a valid number"
     input = gets.chomp
@@ -96,7 +95,9 @@ def artwork_prompts
  puts "3. Culture"
  puts "4. Exit"
 
- select_four
+ input = gets.chomp
+
+ select_four(input)
 
   case(input)
     when '1'
@@ -111,7 +112,7 @@ def artwork_prompts
 end
 
 def art_piece_list
-  ArtPiece.list_all
+  puts ArtPiece.list_all
   continue
 end
 
