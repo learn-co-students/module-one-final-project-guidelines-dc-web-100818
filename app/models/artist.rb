@@ -10,6 +10,11 @@ class Artist < ActiveRecord::Base
     self.art_pieces.map { |piece| piece.name }
   end
 
+  def self.list_artists
+    x = 0
+    self.all.collect {|i| "#{x += 1}. #{i.name}"}
+  end
+
   #lists all pieces of art and the corresponding gallery
   def artwork_locations
     self.art_pieces.collect do |piece|
