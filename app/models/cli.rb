@@ -55,11 +55,11 @@ def continue
   puts "========================================================================"
   puts "Would you like to look for something else? Enter 'yes' or 'no':"
   input = gets.chomp
-  while input != "yes" && input != "no"
+  while input.downcase != "yes" && input.downcase != "no"
     puts "Please enter 'yes' or 'no':"
     input = gets.chomp
   end
-  case(input)
+  case(input.downcase)
     when "yes"
       menu
     when "no"
