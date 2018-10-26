@@ -27,6 +27,7 @@ renoir = Artist.create(name: "Pierre-Auguste Renoir", culture: "French", life_sp
 degas = Artist.create(name: "Edgar Degas", culture: "French", life_span: "1834 - 1917")
 klee = Artist.create(name: "Paul Klee", culture: "Swiss", life_span: "1879 - 1940")
 abramovic = Artist.create(name: "Marina Abramovic", culture: "Serbian", life_span: "born 1946")
+vangogh = Artist.create(name: "Vincent Van Gogh", culture: "Dutch", life_span: "1853 - 1890")
 
 # Period, total: 10
 surrealism = Period.create(name: "Surrealism")
@@ -43,41 +44,75 @@ impressionism = Period.create(name: "Impressionism")
 
 #  Gallery, total: 8
 gal1 = Gallery.create(name: "Dutch painters", floor: 2, theme: "Masters of Dutch 17th century art")
-gal2 = Gallery.create(name: "Spanish painters", floor: 3, theme: "Spanish painters from the XX century")
+gal2 = Gallery.create(name: "Spanish painters", floor: 3, theme: "Art in Spain in the 20th century")
 gal3 = Gallery.create(name: "Contemporary sculpture", floor: 1, theme: "Contemporary sculpture from different parts of the world")
 gal4 = Gallery.create(name: "Renaissance", floor: 2, theme: "Masters of Italian Renaissance")
 gal5 = Gallery.create(name: "Expressionism", floor: 3, theme: "European Expressionism")
-gal6 = Gallery.create(name: "Scultures from Europe", floor:1, theme: "European sculptures of the ages")
-gal7 = Gallery.create(name: "Modern Art", floor: 3, theme: "Modern Art")
+gal6 = Gallery.create(name: "European sculpture", floor: 1, theme: "Masters of European scultpure from various ages")
+gal7 = Gallery.create(name: "Contemporary art", floor: 3, theme: "Works of contemporary artists from Europe and Americas")
 gal8 = Gallery.create(name: "French Impressionism", floor: 3, theme: "Masters of French Impressionism")
+gal9 = Gallery.create(name: "Modern art", floor: 2, theme: "Masterpieces of the early 20th century")
 
 
 # Artwork, total: 28
 night_watch = ArtPiece.create(name: "The Night Watch", classification: "Oil on canvas", period_id: dga.id, artist_id: rembrandt.id, gallery_id: gal1.id)
+
 ww = ArtPiece.create(name: "The Weeping Woman", classification: "Oil on canvas", period_id: cubism.id, artist_id: picasso.id, gallery_id: gal2.id)
+
 memory = ArtPiece.create(name: "The Persistence of Memory", classification: "Oil on canvas", period_id: surrealism.id, artist_id: dali.id, gallery_id: gal2.id)
+
 perro = ArtPiece.create(name: "Perro", classification: "Sculpture", period_id: contemporary.id, artist_id: botero.id, gallery_id: gal3.id)
-primavera = ArtPiece.create(name: "Primavera", classification: "Tempera on panel", period_id: renaissance.id, artist_id: botticelli.id)
+
+primavera = ArtPiece.create(name: "Primavera", classification: "Tempera on panel", period_id: renaissance.id, artist_id: botticelli.id, gallery_id: gal4.id)
+
 nu = ArtPiece.create(name: "Nu couché", classification: "Oil on canvas", period_id: expressionism.id, artist_id: modigliani.id, gallery_id: gal5.id)
+
 nude = ArtPiece.create(name: "Female nude", classification: "Oil on canvas", period_id: expressionism.id, artist_id: modigliani.id, gallery_id: gal5.id)
+
 girl = ArtPiece.create(name: "Girl with a Pearl Earring", classification: "Oil on canvas", period_id: dga.id, artist_id: vermeer.id, gallery_id: gal1.id)
+
 milkmaid = ArtPiece.create(name: "The Milkmaid", classification: "Oil on canvas", period_id: dga.id, artist_id: vermeer.id, gallery_id: gal1.id)
+
 venus = ArtPiece.create(name: "The Birth of Venus", classification: "Tempera on canvas", period_id: renaissance.id, artist_id: botticelli.id, gallery_id: gal4.id)
+
 reve = ArtPiece.create(name: "Le Rêve", classification: "Oil on canvas", period_id: cubism.id, artist_id: picasso.id, gallery_id: gal2.id)
+
 compvii = ArtPiece.create(name: "Composition VII", classification: "Oil on canvas", period_id: expressionism.id, artist_id: kandinsky.id, gallery_id: gal5.id)
+
 hollywood = ArtPiece.create(name: "Hollywood Africans", classification: "Acrylic, Colored chalk", period_id: neoexpress.id, artist_id: basquiat.id, gallery_id: gal7.id)
-david = ArtPiece.create(name: "David", classification: "Sculpture", period_id: renaissance.id , artist_id: michelangelo.id , gallery_id: gal4.id)
-saint_teresa = ArtPiece.create(name: "Ecstasy of Saint Teresa", classification: "Sculpture", period_id: baroque.id , artist_id: bernini.id , gallery_id: gal6.id)
+
+david = ArtPiece.create(name: "David", classification: "Sculpture", period_id: renaissance.id, artist_id: michelangelo.id, gallery_id: gal4.id)
+
+saint_teresa = ArtPiece.create(name: "Ecstasy of Saint Teresa", classification: "Sculpture", period_id: baroque.id, artist_id: bernini.id, gallery_id: gal6.id)
+
 guitar = ArtPiece.create(name: "Guitar", classification: "Sculpture", period_id: cubism.id, artist_id: picasso.id , gallery_id: gal3.id)
+
 brillo = ArtPiece.create(name: "Brillo Box", classification: "Sculpture", period_id: pop.id , artist_id: warhol.id , gallery_id: gal7.id)
+
 marilyns = ArtPiece.create(name: "Shot Marilyns", classification: "Acrylic paint on canvas", period_id: pop.id , artist_id: warhol.id , gallery_id: gal7.id)
+
 motherchild = ArtPiece.create(name: "Mother and Child", classification: "Bronze on wooden base", period_id: gal5.id, artist_id: moore.id, gallery_id: gal7.id)
+
 gato = ArtPiece.create(name: "Gato", classification: "Sculpture", period_id: contemporary.id, artist_id: botero.id, gallery_id: gal3.id)
+
 sunrise = ArtPiece.create(name: "Impression, Sunrise", classification: "Oil on canvas", period_id: impressionism.id, artist_id: monet.id, gallery_id: gal8.id)
+
 lilypond = ArtPiece.create(name: "The Water Lily Pond", classification: "Oil on canvas", period_id: impressionism.id, artist_id: monet.id, gallery_id: gal8.id)
+
 umbrellas = ArtPiece.create(name: "The Umbrellas", classification: "Oil on canvas", period_id: impressionism.id, artist_id: renoir.id, gallery_id: gal8.id)
+
 rehearsal = ArtPiece.create(name: "Ballet Rehearsal", classification: "Oil on canvas", period_id: impressionism.id, artist_id: degas.id, gallery_id: gal8.id)
+
 cafe = ArtPiece.create(name: "In a Café", classification: "Oil on canvas", period_id: impressionism.id, artist_id: degas.id, gallery_id: gal8.id)
+
 roses = ArtPiece.create(name: "Heroic Roses", classification: "Oil on canvas", period_id: expressionism.id, artist_id: klee.id, gallery_id: gal5.id)
+
 communicator = ArtPiece.create(name: "The Communicator", classification: "Sculpture", period_id: contemporary.id, artist_id: abramovic.id, gallery_id: gal3.id)
+
 anatomy = ArtPiece.create(name: "The Anatomy Lesson of Dr. Nicolaes Tulp", classification: "Oil on canvas", period_id: dga.id, artist_id: rembrandt.id, gallery_id: gal1.id)
+
+scream = ArtPiece.create(name: "Scream", classification: "Oil on canvas", period_id: expressionism.id, artist_id: munch.id, gallery_id: gal5.id)
+
+lovers = ArtPiece.create(name: "The Lovers", classification: "Oil on canvas", period_id: surrealism.id, artist_id: magritte.id, gallery_id: gal9.id)
+
+road = ArtPiece.create(name: "Country road in Provence by Night", classification: "Oil on canvas", period_id: impressionism.id, artist_id: vangogh.id, gallery_id: gal9.id)
