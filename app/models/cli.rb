@@ -3,11 +3,11 @@ def start
   puts "Enter 'menu' to access the menu."
   puts "Enter 'q' to exit."
   input = gets.chomp
-    while input != "menu" && input != "q"
+    while input.downcase != "menu" && input.downcase != "q"
       puts "Please enter 'menu' or 'q':"
       input = gets.chomp
     end
-    case(input)
+    case(input.downcase)
       when 'menu'
         menu
       when 'q'
@@ -143,10 +143,17 @@ def artwork_culture
   continue
 end
 
+def select_gallery_floor(input)
+  while ![1, 2, 3].include?(input.to_i)
+    puts "Please enter a valid number:"
+    input = gets.chomp
+  end
+end
 
 def gallery_prompts
   puts "To select a floor, enter 1, 2, or 3."
   input1 = gets.chomp
+  select_gallery_floor(input1.to_i)
   puts "Select a type of information for this floor:"
   puts "1. Rooms"
   puts "2. Artwork"
@@ -154,6 +161,7 @@ def gallery_prompts
   puts "4. Exit"
   puts "Please enter a number:"
   input2 = gets.chomp
+  select_four(input2)
   case(input2)
     when '1'
       puts Gallery.search_galleries_by_floor(input1.to_i)
