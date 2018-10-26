@@ -21,9 +21,11 @@ class ArtPiece < ActiveRecord::Base
     piece_list.collect {|piece| "#{piece.name} by #{piece.artist.name}"}
   end
 
+  # returns names of artworks and artists belonging to input culture
   def self.search_by_culture(input)
-   arr = self.all.select {|el| el.artist.culture.downcase == input.downcase}
-   arr.collect {|piece| "#{piece.name} by #{piece.artist.name}"}
- end
+    arr = self.all.select {|piece| piece.artist.culture.downcase == input.downcase}
+    arr.collect {|piece| "#{piece.name} by #{piece.artist.name}"}
+  end
+
 
 end
