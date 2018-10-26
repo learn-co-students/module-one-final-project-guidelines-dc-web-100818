@@ -27,5 +27,4 @@ class ArtPiece < ActiveRecord::Base
     arr.collect {|piece| "#{piece.name} by #{piece.artist.name}"}
   end
 
-
 end

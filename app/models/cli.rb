@@ -136,4 +136,5 @@ def artwork_culture
 end
 
 def gallery_prompts
+
 end
