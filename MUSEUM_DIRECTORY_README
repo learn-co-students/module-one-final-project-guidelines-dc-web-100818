@@ -1,0 +1,13 @@
+                                          * WELCOME TO THE FLATIRON MUSEUM OF ART *
+                                            A Command Line Interface Application 
+                                                by Ana Harris and Andrew Rivera
+
+
+We have created a CLI application that allows Museum visitors to obtain information about the Artists, pieces of artwork and galleries located in The Flatiron Museum of Art (not a real place, maybe in the future... who knows?)
+
+* INSTRUCTIONS *
+
+1.Fork the file and clone it to your computer
+2.Run 'bundle install' to downloand all the necessary gems
+3.Run 'rake db:seed' in order to populate the seed data for the museum
+4.Run  'ruby bin/run.rb' to initiate the CLI application
